@@ -1,0 +1,30 @@
+<h2><%= @message %></h2>
+
+<h1 class="text-center">画像投稿サイト</h1>
+
+
+
+  <% if @name %>
+
+    <p>
+      <%= @name %>さん、こんにちわ
+    </p>
+
+      <form action="/form" method="POST" enctype="multipart/form-data">
+        <div class="container form-group col-lg-6 col-md-8 col-12">
+          <input type="text" name="title" class="form-control" placeholder="タイトルを入力してください。">
+          <input type="file" name="file" id="file">
+          <input type="submit" value="投稿する">
+        </div>
+      </form>
+
+      <p><a href="/logout">ログアウト</a></p>
+      
+
+  <% else %>
+    <p><a href="/login">こちら</a>よりログインしてください</p>
+
+  <% end %>
+
+
+</body>
